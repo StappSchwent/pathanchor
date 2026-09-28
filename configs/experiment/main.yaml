@@ -1,0 +1,16 @@
+# Primary analysis configuration.
+#
+# Baseline for every reported experiment: the released graph at its declared
+# census, the cohort fixture at its reported composition, the scoring stack of
+# configs/model/scorer.yaml and the training and proposal settings of
+# configs/train/default.yaml.
+base:
+  - ../graph/census.yaml
+  - ../cohort/design.yaml
+  - ../model/scorer.yaml
+  - ../train/default.yaml
+
+experiment:
+  name: main
+  description: deployed framework on the held-out test split
+  arms: integrated

@@ -1,0 +1,206 @@
+{
+  "claims": [
+    {
+      "claim_id": "C1",
+      "code_paths": [
+        "src/pathanchor/paths/marginal.py",
+        "src/pathanchor/guideline/feasibility.py"
+      ],
+      "paper_location": "Sec. III-A, Eq. (1)",
+      "statement": "The reported option is the arg max of the path-marginalised score restricted to the guideline-feasible set",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C2",
+      "code_paths": [
+        "src/pathanchor/paths/marginal.py",
+        "src/pathanchor/evaluation/pipeline.py"
+      ],
+      "paper_location": "Algorithm 1 line 6",
+      "statement": "S_theta(p, a) = log sum over the admissible paths of exp s_theta(pi)",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C3",
+      "code_paths": [
+        "src/pathanchor/graph/ontology.py",
+        "src/pathanchor/graph/builder.py",
+        "src/pathanchor/graph/census.py"
+      ],
+      "paper_location": "Sec. III-B",
+      "statement": "386,204 entities in 41 node types and 7,431,905 relations in 42 relation types",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C4",
+      "code_paths": [
+        "src/pathanchor/graph/ontology.py",
+        "src/pathanchor/paths/signatures.py",
+        "src/pathanchor/agents/ontology_validator.py"
+      ],
+      "paper_location": "Sec. III-C",
+      "statement": "Relation signatures on node types make a path admissible only if it is type-consistent, and an auditor can replay it without the model",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C5",
+      "code_paths": [
+        "src/pathanchor/paths/enumerate.py",
+        "src/pathanchor/agents/retriever.py"
+      ],
+      "paper_location": "Sec. III-C",
+      "statement": "Breadth-first growth with k <= 4 and at most 128 proposals per pair",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C6",
+      "code_paths": [
+        "src/pathanchor/paths/rotation.py",
+        "src/pathanchor/paths/scorer.py"
+      ],
+      "paper_location": "Sec. III-C, Sec. III-D",
+      "statement": "The path coder carries an attention readout driven by the edge sequence, over a relational rotation of the path",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C7",
+      "code_paths": [
+        "src/pathanchor/agents/retriever.py",
+        "src/pathanchor/agents/ontology_validator.py",
+        "src/pathanchor/agents/guideline_adjudicator.py",
+        "src/pathanchor/agents/counterfactual_critic.py",
+        "src/pathanchor/agents/conformal_calibrator.py"
+      ],
+      "paper_location": "Sec. III-D",
+      "statement": "Five agents with typed interfaces: retriever, ontology validator, guideline adjudicator, counterfactual critic, conformal calibrator",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C8",
+      "code_paths": [
+        "src/pathanchor/agents/counterfactual_critic.py"
+      ],
+      "paper_location": "Sec. III-D",
+      "statement": "The counterfactual critic forms falsifying queries and reduces the influence of routes that do not separate the options",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C9",
+      "code_paths": [
+        "src/pathanchor/conformal/split.py",
+        "src/pathanchor/agents/conformal_calibrator.py"
+      ],
+      "paper_location": "Sec. III-E, Eq. (2)",
+      "statement": "Split conformal prediction sets with the finite-sample quantile and abstention above tau_abs = 0.35 at alpha = 0.10",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C10",
+      "code_paths": [
+        "src/pathanchor/cohort/fixture.py",
+        "src/pathanchor/cohort/marginals.py",
+        "src/pathanchor/cohort/splits.py"
+      ],
+      "paper_location": "Sec. III-F",
+      "statement": "4,286 records split 2,572 / 858 / 856, stratified by site and response, patient-disjoint",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C11",
+      "code_paths": [
+        "src/pathanchor/metrics/discrimination.py",
+        "src/pathanchor/metrics/calibration.py",
+        "src/pathanchor/metrics/clinical.py",
+        "src/pathanchor/metrics/agreement.py",
+        "src/pathanchor/metrics/intervals.py"
+      ],
+      "paper_location": "Sec. III-H",
+      "statement": "AUROC and AUPRC with DeLong contrasts and 2,000 stratified bootstrap resamples; 15-bin ECE and Brier; net benefit with treat-all and treat-none references; Cohen's kappa for path audit",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C12",
+      "code_paths": [
+        "src/pathanchor/evaluation/ablations.py",
+        "src/pathanchor/models/estimator.py"
+      ],
+      "paper_location": "Table II Panel A and Panel B",
+      "statement": "Component contributions and the leave-one-out arms, including free-text rationales, mean pooling and a single agent",
+      "verification": "NOT_RUN"
+    },
+    {
+      "claim_id": "C13",
+      "code_paths": [
+        "src/pathanchor/metrics/subgroup.py",
+        "src/pathanchor/evaluation/subgroups.py"
+      ],
+      "paper_location": "Table III, Sec. IV-D",
+      "statement": "Prespecified subgroup analysis with the BRAF-by-method interaction",
+      "verification": "NOT_RUN"
+    },
+    {
+      "claim_id": "C14",
+      "code_paths": [
+        "src/pathanchor/evaluation/external.py",
+        "src/pathanchor/models/encoder.py"
+      ],
+      "paper_location": "Sec. IV-E",
+      "statement": "External validation on 265 harmonised public profiles and the four-rung modality ladder",
+      "verification": "BLOCKED"
+    },
+    {
+      "claim_id": "C15",
+      "code_paths": [
+        "src/pathanchor/evaluation/reader_study.py"
+      ],
+      "paper_location": "Sec. IV-F, Sec. IV-G",
+      "statement": "Fourteen-case expert review and the three-arm reader study with 24 clinicians",
+      "verification": "NOT_RUN"
+    },
+    {
+      "claim_id": "C16",
+      "code_paths": [
+        "configs/experiment/main.yaml"
+      ],
+      "paper_location": "Sec. IV-G",
+      "statement": "62 GPU-hours and 18 CPU-hours of graph construction, 41 GPU-hours of training on four A100 accelerators, 2.4 s and 3,180 tokens per patient at inference, 214 kWh",
+      "verification": "NOT_RUN"
+    }
+  ],
+  "deviations": [
+    {
+      "departs": "The four-site retrospective cohort is not redistributed",
+      "paper_location": "Sec. III-F, DATA AND CODE AVAILABILITY",
+      "why": "It is held at its contributing institutions under a data-use agreement. The release ships the record contract and a schema-compatible cohort fixture that holds every reported marginal exactly, so the mechanisms are executable without the records."
+    },
+    {
+      "departs": "The per-type split of the 386,204 entities and the 7,431,905 relations is a declared default, as is the 1,024-entity mechanistic core",
+      "paper_location": "Sec. III-C, Sec. III-B",
+      "why": "The manuscript states the two census totals and the two type counts but not the allocation between them. Without a declared annotation core, a record's anchors would have no admissible route to any treatment and the path mechanism could not run at all."
+    },
+    {
+      "departs": "Four of the sixteen comparator rows are reported as NOT_RUN",
+      "paper_location": "Sec. III-G",
+      "why": "The chain-of-thought, retrieval-augmented, multi-step knowledge-graph and architecture-search comparators are defined by a hosted instruction model, which this release neither bundles nor calls. The twelve statistical comparators are implemented."
+    },
+    {
+      "departs": "Optimiser, learning rate, schedule, batch size, epoch count, grad clip and the composite objective are engineering defaults",
+      "paper_location": "Sec. IV (training details absent)",
+      "why": "The manuscript reports the training budget in GPU-hours and no optimiser settings. Each default is exposed in configs/train/default.yaml and configs/experiment/main.yaml so a reader can see and change it."
+    },
+    {
+      "departs": "The monotone transform is fitted by isotonic regression",
+      "paper_location": "Sec. III-E",
+      "why": "The manuscript specifies a monotone transform of S_theta fitted on the training split without naming the family. Isotonic regression is the minimal monotone fit and is checked against a second solver."
+    },
+    {
+      "departs": "The abstention-reason profile is not reproduced",
+      "paper_location": "Sec. IV-A to IV-G (no reported abstention ground truth)",
+      "why": "Sec. IV-C reports abstention concentrated in three subgroups, but the cohort carries no field marking why a record abstained, so the profile is NOT_RUN rather than inferred."
+    }
+  ],
+  "framework": "PATHANCHOR",
+  "overall": "PARTIALLY_VERIFIED",
+  "paper": "Multimodal Knowledge Graph and Agentic AI Framework for Interpretable Melanoma Treatment Response Prediction",
+  "scope_note": "Each entry maps a stated artefact of the article to the code that carries it. PASS means the mapping was checked by execution or by an independent recomputation on this tree; NOT_RUN means the artefact is a cohort-level measurement this release does not reproduce; BLOCKED means the check needs an artefact that is not redistributed."
+}

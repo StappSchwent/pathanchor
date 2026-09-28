@@ -1,0 +1,32 @@
+# for unit-test smoke only; do not use for reporting
+base: main.yaml
+graph:
+  entity_total: 6000
+  edge_total: 90000
+  seed: 20260101
+  core_size: 256
+cohort:
+  total: 300
+  calibration_total: 60
+  test_total: 60
+  positives_total: 121
+pipeline:
+  max_hops: 3
+  max_per_pair: 32
+  branching: 12
+  min_hops: 1
+  max_frontier: 64
+train:
+  epochs: 3
+  batch_size: 4
+  max_steps: 40
+  warmup_steps: 5
+  path_cap: 6
+evaluation:
+  bootstrap_resamples: 60
+  seeds:
+    - 20260101
+experiment:
+  name: smoke
+  description: smoke configuration for the unit suite
+  arms: integrated

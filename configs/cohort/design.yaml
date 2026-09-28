@@ -1,0 +1,34 @@
+# Declared composition of the cohort fixture.
+#
+# Every value is a design quantity of the released record set. The manuscript
+# reports the same composition for the retrospective cohort, which is held at its
+# contributing institutions and is not redistributed; the fixture holds these
+# margins exactly so that every mechanism downstream of the record contract is
+# executable. No value here is a measured result of the framework.
+cohort:
+  total: 4286
+  calibration_total: 858
+  test_total: 856
+  positives_total: 1731
+  signal_strength: 1.15
+  seed: 20260101
+  molecular:
+    - 1894
+    - 926
+    - 531
+    - 935
+  treatment:
+    - 2242
+    - 1161
+    - 883
+  site:
+    - 1412
+    - 1107
+    - 986
+    - 781
+  sex:
+    - 1954
+    - 2332
+  age:
+    - 2524
+    - 1762

@@ -1,0 +1,14 @@
+# External validation protocol.
+#
+# The four transcriptomic series are public; this release reads a caller-supplied
+# profile table and does not redistribute the series. With the table absent the
+# cohort-level value is NOT_RUN.
+base: main.yaml
+experiment:
+  name: supplement_external
+  description: harmonised external profiles and the four-rung modality ladder
+  arms: external
+external:
+  series: 4
+  harmonised_profiles: 265
+  missing_imaging_share: 0.284

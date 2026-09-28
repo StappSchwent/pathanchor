@@ -1,0 +1,8 @@
+# Leave-one-out arms, run on their own so the panel can be reproduced in
+# isolation from the component panel.
+base: main.yaml
+experiment:
+  name: ablation_leave_one_out
+  description: remove one component at a time from the integrated system
+  arms: panel_b
+  limit: 300

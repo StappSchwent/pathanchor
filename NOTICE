@@ -1,0 +1,103 @@
+PATHANCHOR — guideline-anchored evidence-path estimation for melanoma
+treatment-response prediction
+Copyright 2026 the PATHANCHOR authors
+
+This product includes software developed by the PATHANCHOR authors and is
+distributed under the Apache License, Version 2.0 (see LICENSE).
+
+------------------------------------------------------------------------------
+Third-party resources referenced by the framework
+------------------------------------------------------------------------------
+
+No third-party dataset is bundled with this release. The resources below are
+read by the construction chain at run time, from their own distribution
+points, under their own terms. Each entry states the version the manuscript
+names, the access route, and the licence the distributor publishes. Where the
+licence is not stated by the distributor, that is recorded as "not stated".
+
+HGNC (HUGO Gene Nomenclature Committee)
+  Version     : 2021 release, as cited in the manuscript
+  Access      : https://www.genenames.org
+  Licence     : CC0 1.0 Universal for the gene nomenclature records; the
+                HGNC symbol list is redistributed under the same terms.
+  Used for    : gene and protein-coding-locus identity.
+
+DrugBank
+  Version     : DrugBank 5.0, as cited in the manuscript
+  Access      : https://go.drugbank.com
+  Licence     : Creative Commons Attribution-NonCommercial 4.0 for the open
+                release; the full release requires a licence and is not
+                redistributed here.
+  Used for    : compound identity, mechanism and drug-target relations.
+
+KEGG
+  Version     : KEGG pathway release, as cited in the manuscript
+  Access      : https://www.genome.jp/kegg/
+  Licence     : KEGG is provided under the KEGG access policy; academic use of
+                the KEGG REST API is permitted, redistribution of the data is
+                not.
+  Used for    : pathway membership and pathway hierarchy.
+
+STRING
+  Version     : STRING v11, as cited in the manuscript
+  Access      : https://string-db.org
+  Licence     : Creative Commons Attribution 4.0 International.
+  Used for    : protein-protein interaction evidence and its confidence tier.
+
+Hetionet
+  Version     : Hetionet v1.0, from the systematic integration of biomedical
+                knowledge cited as reference [15] of the manuscript
+  Access      : https://github.com/hetio/hetionet
+  Licence     : CC0 1.0 Universal.
+  Used for    : cross-domain connections between node types.
+
+SNOMED CT
+  Version     : SNOMED CT international release, via a national Affiliate
+                licence route
+  Access      : https://www.snomed.org
+  Licence     : SNOMED International Affiliate licence. Concept identifiers are
+                used for type grounding only; no SNOMED CT content is
+                redistributed with this release.
+  Used for    : disease and morphology concept identity.
+
+ICD-O-3 (International Classification of Diseases for Oncology, third edition)
+  Version     : Third edition, second revision
+  Access      : https://www.who.int/standards/classifications
+  Licence     : World Health Organization terms of use.
+  Used for    : morphology and topography coding of the disease nodes.
+
+NCCN Clinical Practice Guidelines in Oncology — Melanoma: Cutaneous v2.2026
+  Access      : https://www.nccn.org
+  Licence     : Copyright National Comprehensive Cancer Network. The guideline
+                text is not redistributed. The feasibility layer in
+                src/pathanchor/guideline reads a caller-supplied statement
+                table; no guideline text is shipped.
+  Used for    : the feasibility set C(p) of Eq. (1).
+
+GEO series GSE78220, GSE91061, GSE115821 / ENA study PRJEB23709
+  Access      : see dataset_urls.txt
+  Licence     : NCBI GEO and EBI ENA terms of use; each series additionally
+                carries the terms of its originating publication.
+  Used for    : the external validation profile table, which this release reads
+                from a caller-supplied file and does not redistribute.
+
+------------------------------------------------------------------------------
+Third-party software
+------------------------------------------------------------------------------
+
+PyTorch               BSD-3-Clause        https://pytorch.org
+NumPy                 BSD-3-Clause        https://numpy.org
+SciPy                 BSD-3-Clause        https://scipy.org
+scikit-learn          BSD-3-Clause        https://scikit-learn.org
+PyYAML                MIT                 https://pyyaml.org
+
+------------------------------------------------------------------------------
+Cohort
+------------------------------------------------------------------------------
+
+The four-site retrospective cohort, the calibration split and the external
+profile table used by the manuscript are held at their contributing
+institutions under a data-use agreement and are not redistributed. What this
+release ships is the cohort schema and a schema-compatible cohort fixture built
+from the manuscript's reported marginals. No real patient record is present in
+this tree.

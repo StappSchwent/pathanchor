@@ -1,0 +1,7 @@
+# Component panel of Table II Panel A and the leave-one-out panel of Panel B.
+base: main.yaml
+experiment:
+  name: ablation_component_panel
+  description: additive contributions and leave-one-out arms
+  arms: panel_a, panel_b
+  limit: 200

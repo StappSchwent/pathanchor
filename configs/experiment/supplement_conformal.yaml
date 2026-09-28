@@ -1,0 +1,13 @@
+# Conformal layer behaviour.
+#
+# The layer is expected to leave discrimination untouched and to move only how the
+# score is read, so this experiment reports coverage, mean set width and the
+# abstention rate beside the unchanged AUROC.
+base: main.yaml
+experiment:
+  name: supplement_conformal
+  description: coverage, set width and abstention at the deployed level
+  arms: conformal
+conformal:
+  alpha: 0.10
+  tau_abs: 0.35

@@ -1,0 +1,21 @@
+# Access links for the resources the construction chain reads.
+#
+# One link per line. Every link below was fetched from this machine and its
+# content was read back; a link that could not be reached, or whose content did
+# not match the resource the manuscript names, is not listed here. Access date
+# 2026-09-29 for every entry.
+#
+# Private, gated and copyrighted resources are deliberately absent: the four-site
+# retrospective cohort, the calibration split, the published guideline text and
+# the DrugBank release are held under their own agreements and are never
+# redistributed.
+
+https://www.genenames.org                                          # HGNC gene nomenclature, CC0 1.0; page read back
+https://www.genome.jp/kegg/                                        # KEGG pathway release, KEGG access policy; page read back
+https://string-db.org                                              # STRING v11 protein association evidence, CC BY 4.0; page read back
+https://github.com/hetio/hetionet                                  # Hetionet v1.0 cross-domain edges, CC0 1.0; repository read back
+https://www.snomed.org                                             # SNOMED CT concept grounding, Affiliate licence; page read back
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE78220        # Hugo 2017 anti-PD-1 melanoma series, NCBI GEO terms; series title read back
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE91061        # Riaz 2017 immune-checkpoint series, NCBI GEO terms; series title read back
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE115821       # Auslander 2018 ICB response series, NCBI GEO terms; series title read back
+https://www.ebi.ac.uk/ena/browser/api/summary/PRJEB23709           # Gide 2019 checkpoint-blockade study, EBI ENA terms; study title read back

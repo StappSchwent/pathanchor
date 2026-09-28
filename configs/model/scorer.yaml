@@ -1,0 +1,15 @@
+# Path scorer and multimodal encoder.
+#
+# The manuscript reports the module's ranking behaviour rather than its width or
+# schedule, so the architecture below is a declared engineering default. The
+# rotation dimension and the readout width are method constants; the ablation
+# switches correspond to the arms of Table II.
+model:
+  dimension: 32
+  scorer_hidden: 64
+  hidden: 64
+  blocks: 2
+  dropout: 0.1
+  typed_paths: true
+  use_graph_paths: true
+  use_base: true

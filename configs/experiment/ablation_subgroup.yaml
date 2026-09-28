@@ -1,0 +1,14 @@
+# Prespecified subgroup analysis of Table III.
+base: main.yaml
+experiment:
+  name: ablation_subgroup
+  description: molecular, treatment, site, region, sex and age strata
+  arms: subgroup
+evaluation:
+  subgroup_dimensions:
+    - Molecular
+    - Treatment class
+    - Site
+    - Region
+    - Sex
+    - Age band

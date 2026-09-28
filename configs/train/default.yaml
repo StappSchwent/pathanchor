@@ -1,0 +1,50 @@
+# Training, proposal and conformal settings.
+#
+# The manuscript reports a training budget in GPU-hours and no optimiser,
+# schedule, batch size or epoch count, and no proposal branching factor. Each
+# value below is therefore a declared engineering default, exposed here so a
+# reader can see and change it. The hop bound and the per-pair proposal budget are
+# the manuscript's; the conformal level and abstention threshold are too.
+pipeline:
+  max_hops: 4
+  max_per_pair: 128
+  branching: 24
+  min_hops: 1
+  max_frontier: 256
+
+conformal:
+  alpha: 0.10
+  tau_abs: 0.35
+  epsilon: 0.001
+
+train:
+  epochs: 60
+  batch_size: 8
+  grad_accumulation: 1
+  max_steps: 2000
+  learning_rate: 0.0003
+  weight_decay: 0.01
+  warmup_steps: 100
+  schedule: cosine
+  grad_clip: 1.0
+  seed: 20260101
+  precision: fp32
+  path_cap: 12
+  epsilon: 0.001
+  ranking_scale: 0.1
+
+evaluation:
+  bootstrap_resamples: 2000
+  seeds:
+    - 20260101
+    - 20260102
+    - 20260103
+    - 20260104
+    - 20260105
+  subgroup_dimensions:
+    - Molecular
+    - Treatment class
+    - Site
+    - Region
+    - Sex
+    - Age band

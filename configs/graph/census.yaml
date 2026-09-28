@@ -1,0 +1,99 @@
+# Declared size of the released graph.
+#
+# The manuscript states two totals (386,204 entities, 7,431,905 relations) and two
+# type counts (41 node types, 42 relation types) but not the allocation between
+# them, so the per-type weights below are a declared engineering default. They are
+# recorded in the deviation register of claim_to_code.json.
+graph:
+  entity_total: 386204
+  edge_total: 7431905
+  seed: 20260101
+  # Size of the mechanistic core: the first entities of each type that the
+  # treatment-response relations are drawn from. A graph is not uniformly
+  # annotated, and an anchor outside the core would have no admissible route.
+  core_size: 1024
+  node_type_weights:
+    DISEASE: 1.0
+    MORPHOLOGY: 0.6
+    ANATOMIC_SITE: 0.4
+    GENE: 8.0
+    PROTEIN: 6.0
+    PROTEIN_CODING_LOCUS: 2.0
+    COMPOUND: 1.5
+    DRUG: 1.5
+    PATHWAY: 2.5
+    BIOLOGICAL_PROCESS: 3.0
+    MOLECULAR_FUNCTION: 2.0
+    CELLULAR_COMPONENT: 1.0
+    INTERACTION_EVIDENCE: 4.0
+    VARIANT: 3.0
+    SOMATIC_MUTATION: 2.0
+    COPY_NUMBER_ALTERATION: 1.0
+    EXPRESSION_SIGNATURE: 0.8
+    GENE_EXPRESSION_VALUE: 2.0
+    CLINICAL_VARIABLE: 1.2
+    STAGE: 0.3
+    PERFORMANCE_STATUS: 0.2
+    HISTOLOGY_DESCRIPTOR: 0.6
+    DERMATOSCOPY_FEATURE: 0.3
+    WSI_TILE: 1.5
+    WSI_FEATURE: 1.5
+    TREATMENT: 0.6
+    TREATMENT_CLASS: 0.4
+    REGIMEN: 0.5
+    GUIDELINE_RECOMMENDATION: 0.3
+    GUIDELINE_STATEMENT: 0.3
+    FEASIBILITY_CONSTRAINT: 0.3
+    EVIDENCE_TIER: 0.1
+    ONTOLOGY_CLASS: 1.0
+    PHENOTYPE: 1.0
+    IMMUNE_CELL_POPULATION: 0.5
+    CYTOKINE: 0.4
+    RECEPTOR: 0.6
+    TRANSPORT_PROTEIN: 0.4
+    ENZYME: 0.5
+    DRUG_TARGET: 0.5
+    RESPONSE_CRITERION: 0.2
+  relation_weights:
+    PREDICTS_RESPONSE_TO: 3.0
+    ASSOCIATED_WITH: 3.0
+    INTERACTS_WITH: 4.0
+    TARGETS: 3.0
+    TARGETED_BY: 2.0
+    ENCODES: 3.0
+    ENCODED_BY: 2.0
+    PARTICIPATES_IN: 3.0
+    HAS_PARTICIPANT: 2.0
+    EXPRESSED_IN: 2.5
+    EXPRESSES: 2.0
+    MEASURED_AS: 2.0
+    OBSERVED_VALUE: 2.5
+    VARIANT_OF: 2.0
+    HAS_VARIANT: 2.0
+    CHARACTERIZES: 1.5
+    OBSERVED_IN: 2.0
+    UPREGULATES: 2.0
+    DOWNREGULATES: 2.0
+    ACTIVATES: 2.5
+    INHIBITS: 2.5
+    MEDIATES: 2.0
+    MEDIATED_BY: 2.0
+    FEASIBLE_IN_STATE: 1.0
+    RECOMMENDED_FOR: 1.0
+    PREFERRED_OVER: 0.5
+    CONTRAINDICATED_WITH: 0.5
+    CONSTRAINS: 0.5
+    DERIVED_FROM_STATEMENT: 0.5
+    SUPPORTS: 1.5
+    REFUTES: 0.5
+    CO_OCCURS_WITH: 1.5
+    SUBCLASS_OF: 2.0
+    SUBSUMED_BY: 1.5
+    PART_OF: 2.0
+    HAS_PART: 1.5
+    INTERACTION_EVIDENCE_FOR: 1.0
+    RISK_FACTOR_FOR: 1.0
+    HAS_MAGNITUDE: 1.5
+    HAS_DIRECTION: 1.5
+    MEMBER_OF: 1.0
+    HAS_MEMBER: 1.0

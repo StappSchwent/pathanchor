@@ -1,0 +1,9 @@
+# Multi-centre stability and leave-one-site-out retraining.
+base: main.yaml
+experiment:
+  name: supplement_multicentre
+  description: per-site performance and leave-one-site-out retraining
+  arms: multicentre
+multicentre:
+  sites: 4
+  leave_one_site_out: true
