@@ -11,6 +11,7 @@ neither can inherit an unimplemented method.
 from __future__ import annotations
 
 import math
+from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
 import torch
@@ -32,7 +33,7 @@ class ScheduleConfig:
             raise ValueError("min_ratio must lie in [0, 1]")
 
 
-class WarmupSchedule(torch.optim.lr_scheduler.LRScheduler):
+class WarmupSchedule(torch.optim.lr_scheduler.LRScheduler, ABC):
     """Base schedule: linear warmup followed by a shape owned by the subclass."""
 
     def __init__(
@@ -46,8 +47,9 @@ class WarmupSchedule(torch.optim.lr_scheduler.LRScheduler):
         self.base_learning_rate = float(optimiser.param_groups[0]["lr"])
         super().__init__(optimiser, last_epoch=last_epoch)
 
+    @abstractmethod
     def _decay_ratio(self, step: int) -> float:
-        raise NotImplementedError
+        """The post-warmup ratio for a step counted from the end of warmup."""
 
     def get_lr(self) -> list[float]:  # type: ignore[override]
         step = max(self.last_epoch, 0)
